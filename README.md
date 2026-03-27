@@ -40,8 +40,8 @@ options), adds comprehensive tests, and meets the Home Assistant
                                          │
                                          ▼
                               ┌──────────────────────┐
-                              │   Home Assistant      │
-                              │   entity states       │
+                              │   Home Assistant     │
+                              │   entity states      │
                               └──────────────────────┘
 ```
 
