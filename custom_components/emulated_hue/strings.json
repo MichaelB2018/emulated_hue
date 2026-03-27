@@ -1,0 +1,41 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Emulated Hue",
+        "description": "Set up the Hue bridge emulator. Alexa and other Hue clients will discover this as a Philips Hue bridge on your network.",
+        "data": {
+          "listen_port": "Listen port",
+          "advertise_port": "Advertise port"
+        },
+        "data_description": {
+          "listen_port": "TCP port for the emulated Hue bridge API. Default is 8300. If using an NGINX proxy on port 80, keep this as-is.",
+          "advertise_port": "Port advertised to Alexa via SSDP. Set to 80 if you use an NGINX reverse proxy in front of the bridge. Leave blank to use the listen port."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Emulated Hue is already configured."
+    },
+    "error": {
+      "invalid_port": "Port must be between 1024 and 65535."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Emulated Hue Options",
+        "description": "Select entities to expose as Hue lights and set their Alexa-visible names.",
+        "data": {
+          "listen_port": "Listen port",
+          "advertise_port": "Advertise port",
+          "entities": "Entities to expose"
+        }
+      },
+      "entity_names": {
+        "title": "Entity Names",
+        "description": "Set the name Alexa will use for each entity. Leave blank to use the entity's friendly name."
+      }
+    }
+  }
+}

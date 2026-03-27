@@ -1,0 +1,135 @@
+# Quality scale for emulated_hue integration
+# https://developers.home-assistant.io/docs/core/integration-quality-scale/
+
+rules:
+  # Bronze
+  action-setup:
+    status: exempt
+    comment: No custom actions/services defined.
+  appropriate-polling:
+    status: exempt
+    comment: Local push integration, no polling.
+  brands:
+    status: todo
+    comment: Brand assets to be added when submitting to core.
+  common-modules:
+    status: done
+  config-flow:
+    status: done
+    comment: Full config flow with user setup and YAML auto-import.
+  config-flow-test-coverage:
+    status: done
+  dependency-transparency:
+    status: done
+    comment: No external dependencies; uses only aiohttp (bundled with HA).
+  docs-actions:
+    status: exempt
+    comment: No custom actions.
+  docs-high-level-description:
+    status: todo
+    comment: To be written for core PR.
+  docs-installation-instructions:
+    status: todo
+  docs-removal-instructions:
+    status: todo
+  entity-event-setup:
+    status: exempt
+    comment: No entities registered; this integration runs a standalone HTTP server.
+  entity-unique-id:
+    status: exempt
+    comment: No entities registered.
+  has-entity-name:
+    status: exempt
+  log-when-unavailable:
+    status: done
+    comment: Logs when server fails to start or SSDP fails.
+  parallel-updates:
+    status: exempt
+  reauthentication-flow:
+    status: exempt
+    comment: No authentication required.
+  test-before-configure:
+    status: done
+    comment: Port validation in config flow.
+  test-before-setup:
+    status: done
+    comment: Server start failure returns False from async_setup_entry.
+  unique-config-entry:
+    status: done
+    comment: Single instance enforced via unique_id.
+
+  # Silver
+  action-exceptions:
+    status: exempt
+  config-entry-unloading:
+    status: done
+    comment: Full cleanup of HTTP server and SSDP transport.
+  docs-configuration-parameters:
+    status: todo
+  docs-troubleshooting:
+    status: todo
+  entity-unavailable:
+    status: exempt
+  integration-owner:
+    status: todo
+  log-issues:
+    status: done
+  reconfiguration-flow:
+    status: todo
+    comment: Port can be changed via options flow.
+  stale-devices:
+    status: exempt
+    comment: No device registry entries.
+
+  # Gold
+  devices:
+    status: exempt
+    comment: This integration does not create HA devices; it exposes existing ones via Hue API.
+  diagnostics:
+    status: done
+    comment: Full diagnostic data export.
+  discovery:
+    status: exempt
+    comment: This integration IS the discovery target, not a discovery source.
+  discovery-update-info:
+    status: exempt
+  docs-data-update:
+    status: exempt
+  docs-examples:
+    status: todo
+  docs-known-limitations:
+    status: todo
+  docs-supported-devices:
+    status: todo
+  docs-supported-functions:
+    status: todo
+  docs-use-cases:
+    status: todo
+  dynamic-devices:
+    status: exempt
+  entity-category:
+    status: exempt
+  entity-device-class:
+    status: exempt
+  entity-disabled-by-default:
+    status: exempt
+  exception-translations:
+    status: done
+  icon-translations:
+    status: exempt
+  repair-issues:
+    status: done
+    comment: Raises repair issue when legacy emulated_hue YAML is detected.
+  stale-devices:
+    status: exempt
+
+  # Platinum
+  async-dependency:
+    status: done
+    comment: All IO is async (aiohttp, asyncio datagram).
+  inject-websession:
+    status: exempt
+    comment: No outbound HTTP requests.
+  strict-typing:
+    status: done
+    comment: Full type annotations, mypy --strict clean.

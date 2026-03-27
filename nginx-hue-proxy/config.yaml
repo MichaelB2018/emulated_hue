@@ -1,0 +1,22 @@
+name: "NGINX Hue Proxy"
+version: "1.0.0"
+slug: nginx_hue_proxy
+description: >-
+  Reverse proxy on port 80: routes Hue bridge API traffic to emulated_hue
+  (port 8300) and everything else to Home Assistant (port 8123).
+  Allows HA dashboard and Alexa local control to coexist on port 80.
+url: "https://github.com/home-assistant/addons"
+arch:
+  - aarch64
+  - armv7
+  - amd64
+init: false
+host_network: true
+ports:
+  80/tcp: 80
+map:
+  - config:ro
+options: {}
+schema: {}
+startup: services
+boot: auto
