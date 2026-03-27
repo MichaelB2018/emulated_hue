@@ -89,9 +89,9 @@ multiplexes port 80:
   route to the emulated Hue server (default port 8300).
 - Everything else routes to Home Assistant (port 8123).
 
-Install the add-on from `nginx-hue-proxy/` as a local add-on:
+Install the add-on from `addon/nginx-hue-proxy/` as a local add-on:
 
-1. Copy the `nginx-hue-proxy/` folder to `/addons/nginx-hue-proxy/`
+1. Copy the `addon/nginx-hue-proxy/` folder to `/addons/nginx-hue-proxy/`
    on your HA host.
 2. Go to **Settings → Add-ons → Add-on Store → ⋮ → Check for updates**.
 3. Install and start the **NGINX Hue Proxy** add-on.
@@ -136,12 +136,13 @@ custom_components/emulated_hue/
 │   └── en.json        # English translations
 └── upnp.py            # SSDP/UPnP discovery responder
 
-nginx-hue-proxy/       # HA add-on: NGINX reverse proxy
-├── build.yaml
-├── config.yaml
-├── Dockerfile
-├── nginx.conf
-└── run.sh
+addon/
+└── nginx-hue-proxy/   # HA add-on: NGINX reverse proxy
+    ├── build.yaml
+    ├── config.yaml
+    ├── Dockerfile
+    ├── nginx.conf
+    └── run.sh
 
 tests/components/emulated_hue/
 ├── conftest.py         # Shared fixtures
