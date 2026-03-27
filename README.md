@@ -26,13 +26,13 @@ options), adds comprehensive tests, and meets the Home Assistant
 ## How it works
 
 ```
-┌─────────┐  SSDP/UDP 1900   ┌──────────────────────┐
+┌─────────┐  SSDP/UDP 1900    ┌──────────────────────┐
 │  Alexa  │ ───────────────►  │  SSDP Responder      │
 │  Echo   │  ◄─────────────── │  (upnp.py)           │
 │         │  description.xml  │                      │
-│         │ ─────────────────►│  Hue REST API        │
+│         │ ───────────────►  │  Hue REST API        │
 │         │  /api, /lights    │  (hue_api.py)        │
-│         │  ◄────────────────│                      │
+│         │  ◄─────────────── │                      │
 └─────────┘   JSON responses  └──────────┬───────────┘
                                          │
                               calls HA services
