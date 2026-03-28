@@ -62,6 +62,16 @@ options), adds comprehensive tests, and meets the Home Assistant
 
 ## Installation
 
+### HACS (recommended)
+
+1. Open **HACS** in your Home Assistant UI.
+2. Go to **Integrations → ⋮ → Custom repositories**.
+3. Add `https://github.com/MichaelB2018/emulated_hue` with category **Integration**.
+4. Search for **Emulated Hue** in HACS and install it.
+5. Restart Home Assistant.
+
+### Manual
+
 Copy `custom_components/emulated_hue/` into your Home Assistant
 `config/custom_components/` directory.  Restart Home Assistant.
 
